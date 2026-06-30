@@ -42,16 +42,7 @@ function formatMoney(value) {
 }
 
 function getTone(value) {
-  if (value <= 149) {
-    return {
-      background: "#f1f0ef",
-      title: "Маленькая скидка",
-      text: "Рекомендуем увеличить. Это поднимет шансы на продажу",
-      color: "#111111"
-    };
-  }
-
-  if (value <= 299) {
+  if (value <= 400) {
     return {
       background: "#e0f5ff",
       title: "Хорошая скидка!",
@@ -148,20 +139,19 @@ function updateModalScale() {
   const viewport = window.visualViewport || window;
   const viewportWidth = viewport.width || window.innerWidth;
   const viewportHeight = viewport.height || window.innerHeight;
-  const scale = Math.min(1, (viewportWidth - 32) / modalSize.width);
+  const modalTop = viewportWidth >= 900 && viewportHeight >= 1100 ? 146 : layout.viewportGap;
+  const widthScale = (viewportWidth - 32) / modalSize.width;
+  const heightScale = (viewportHeight - modalTop - layout.viewportGap) / modalSize.height;
+  const scale = Math.min(1, widthScale, heightScale);
   const scaledWidth = modalSize.width * scale;
+  const scaledHeight = modalSize.height * scale;
   const modalLeft = Math.max(16, (viewportWidth - scaledWidth) / 2);
-  const modalTop = scale === 1 && viewportWidth >= 900 && viewportHeight >= 1100 ? 146 : layout.viewportGap;
-  const availableHeight = (viewportHeight - modalTop - layout.viewportGap) / scale;
-  const modalHeight = Math.min(modalSize.height, availableHeight);
-  const contentHeight = Math.max(180, modalHeight - layout.footerHeight - layout.contentTop);
-  const scaledHeight = modalHeight * scale;
 
   document.documentElement.style.setProperty("--modal-scale", String(scale));
   document.documentElement.style.setProperty("--modal-left", `${modalLeft}px`);
   document.documentElement.style.setProperty("--modal-top", `${modalTop}px`);
-  document.documentElement.style.setProperty("--modal-height", `${modalHeight}px`);
-  document.documentElement.style.setProperty("--content-height", `${contentHeight}px`);
+  document.documentElement.style.setProperty("--modal-height", `${modalSize.height}px`);
+  document.documentElement.style.setProperty("--content-height", `${modalSize.height - layout.footerHeight - layout.contentTop}px`);
   page.style.minHeight = `${Math.max(viewportHeight, scaledHeight + modalTop + layout.viewportGap)}px`;
 }
 
