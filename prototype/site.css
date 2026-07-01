@@ -278,12 +278,12 @@ button {
       transparent 100%
     );
   background-size: 220% 100%;
-  mask-image: url("./assets/ai-title-shimmer-mask.png?v=figma-107-36052-20260701-4");
+  mask-image: url("./assets/ai-title-shimmer-mask.png?v=figma-107-36052-20260701-5");
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
   mix-blend-mode: screen;
   pointer-events: none;
-  -webkit-mask-image: url("./assets/ai-title-shimmer-mask.png?v=figma-107-36052-20260701-4");
+  -webkit-mask-image: url("./assets/ai-title-shimmer-mask.png?v=figma-107-36052-20260701-5");
   -webkit-mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
   animation: ai-title-shimmer 4s ease-in-out infinite;
@@ -299,12 +299,12 @@ button {
     opacity: 1;
   }
 
-  22% {
+  66% {
     background-position: -80% 0;
     opacity: 1;
   }
 
-  30%,
+  74%,
   100% {
     background-position: -80% 0;
     opacity: 0;
