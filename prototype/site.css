@@ -379,17 +379,13 @@ button {
   white-space: nowrap;
 }
 
-.ai-all-card-html span {
-  display: grid;
-  width: calc(18px * var(--screen-scale));
+.ai-all-card-html img {
+  display: block;
+  width: calc(18.29px * var(--screen-scale));
   height: calc(26px * var(--screen-scale));
-  place-items: center;
-  border-radius: calc(32px * var(--screen-scale));
-  background: #141414;
-  color: #ffffff;
-  font-size: calc(13px * var(--screen-scale));
-  font-weight: 800;
-  line-height: 1;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
 }
 
 .sale-all-card {
