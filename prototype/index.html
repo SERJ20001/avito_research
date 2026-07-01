@@ -3,113 +3,93 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Скидка на доставку для покупателя</title>
+    <title>Промо-хаб</title>
     <link rel="preload" as="font" href="./fonts/Manrope_Cut_008-Medium.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="./fonts/Manrope_Cut_008-ExtraBold.woff2" type="font/woff2" crossorigin>
-    <link rel="preload" as="image" href="./assets/delivery-hero.png">
-    <link rel="stylesheet" href="./site.css?v=figma-76-37893-20260701-9">
+    <link rel="preload" as="image" href="./assets/proto-list.png?v=figma-107-36052-20260701-2" fetchpriority="high">
+    <link rel="preload" as="image" href="./assets/ai-card-sale-new.png?v=figma-107-36052-20260701-2">
+    <link rel="stylesheet" href="./site.css?v=figma-107-36052-20260701-2">
   </head>
   <body>
-    <main class="page" aria-label="Скидка на доставку для покупателя">
-      <section class="modal">
-        <button class="close-button modal-close-button" type="button" aria-label="Закрыть">
-          <img src="./assets/icon-close-raster.png" alt="">
-        </button>
-        <div class="content">
-          <img class="hero-image" src="./assets/delivery-hero.png" alt="">
+    <main class="app" data-app data-screen="list" aria-label="Промо-хаб">
+      <section class="screen screen-list is-active" data-panel="list" aria-label="Мои объявления">
+        <div class="screen-scroll" data-scroll="list">
+          <img class="screen-image" src="./assets/proto-list.png?v=figma-107-36052-20260701-2" alt="">
+          <button class="hit hit-factoid" type="button" data-action="discounts" aria-label="Открыть скидки и акции"></button>
+        </div>
+        <div class="fixed-crop list-header" aria-hidden="true">
+          <img src="./assets/proto-list.png?v=figma-107-36052-20260701-2" alt="">
+        </div>
+        <div class="fixed-crop list-footer" aria-hidden="true">
+          <img src="./assets/proto-list.png?v=figma-107-36052-20260701-2" alt="">
+        </div>
+      </section>
 
-          <header class="intro">
-            <h1>Скидка на доставку<br>для покупателя</h1>
-            <div class="benefits">
-              <div class="benefit">
-                <img src="./assets/icon-flag-raster.png" alt="">
-                <p>Товар получит яркий флажок, это увеличивает просмотры до 2,5 раз</p>
-              </div>
-              <div class="benefit">
-                <img src="./assets/icon-wallet-raster.png" alt="">
-                <p>Сейчас платить не нужно, вычтем из денег за товар после продажи</p>
-              </div>
-            </div>
-          </header>
+      <section class="screen screen-discounts" data-panel="discounts" aria-label="Скидки и акции">
+        <div class="screen-scroll" data-scroll="discounts">
+          <img class="screen-image" data-src="./assets/proto-discounts.png?v=figma-107-36052-20260701-2" alt="">
+          <button class="hit hit-back" type="button" data-action="list" aria-label="Назад"></button>
+          <button class="hit hit-level" type="button" data-action="level" aria-label="Открыть уровень"></button>
 
-          <section class="discount-control" aria-label="Размер скидки">
-            <h2>Размер скидки <span class="hint"><img src="./assets/icon-question-raster.png" alt=""></span></h2>
-            <div class="slider-card">
-              <div class="slider-top">
-                <output class="discount-value" data-discount-value>200 ₽</output>
-                <button class="clear-button" type="button" aria-label="Очистить скидку">
-                  <img src="./assets/icon-close-raster.png" alt="">
-                </button>
+          <section class="ai-section-live" aria-label="Нейро-советы">
+            <img class="ai-section-header" src="./assets/ai-header-new.png?v=figma-107-36052-20260701-2" alt="Нейро-советы">
+            <div class="carousel carousel-ai carousel-ai-new" aria-label="Свайп нейро-советов">
+              <div class="carousel-track">
+                <img class="ai-card" src="./assets/ai-card-sale-new.png?v=figma-107-36052-20260701-2" alt="Отправьте товары на распродажу">
+                <article class="ai-card ai-card-html" aria-label="Подключите скидку на доставку">
+                  <div class="ai-card-text">
+                    <h2>Подключите скидку на доставку</h2>
+                    <p>Товарами интересуются<br>из других городов</p>
+                  </div>
+                  <div class="ai-card-images" aria-hidden="true">
+                    <img class="ai-card-image ai-card-image-back" src="./assets/ai-delivery-img-back.png?v=figma-107-36052-20260701-2" alt="">
+                    <img class="ai-card-image ai-card-image-front" src="./assets/ai-delivery-img-front.png?v=figma-107-36052-20260701-2" alt="">
+                  </div>
+                </article>
+                <img class="ai-card" src="./assets/ai-card-quantity-new.png?v=figma-107-36052-20260701-2" alt="Подключите скидку на количество">
+                <article class="ai-all-card ai-all-card-html" aria-label="Все доступные">
+                  <h2>Все доступные</h2>
+                  <span aria-hidden="true">➜</span>
+                </article>
               </div>
-              <div class="range-shell">
-                <div class="range-track" aria-hidden="true"></div>
-                <span class="range-thumb" aria-hidden="true"></span>
-                <input class="range-input" data-discount-range type="range" min="50" max="500" step="1" value="200" aria-label="Размер скидки">
-              </div>
-              <div class="range-labels" aria-hidden="true">
-                <span>50</span>
-                <span>500</span>
-              </div>
-            </div>
-            <div class="discount-message" data-discount-message>
-              <strong>Хорошая скидка!</strong>
-              <span>Для 80% покупателей доставка будет 0₽. Остальным скидка 200 ₽</span>
             </div>
           </section>
 
-          <section class="buyers" aria-label="На примере покупателей">
-            <h2>На примере покупателей</h2>
-            <div class="buyer-grid">
-              <article class="buyer-card" data-buyer data-base-price="200">
-                <div class="buyer-head">
-                  <img src="./assets/buyer-mikhail.png" alt="">
-                  <div>
-                    <h3>Михаил</h3>
-                    <p>300 км. от вас</p>
-                  </div>
-                </div>
-                <div class="payment-card">
-                  <div>
-                    <p class="price-line" data-pay-price></p>
-                    <p class="caption">Заплатит покупатель</p>
-                  </div>
-                  <div>
-                    <p class="deduct" data-deduct-price></p>
-                    <p class="caption">Вычтем из денег за товар</p>
-                  </div>
-                </div>
-              </article>
-
-              <article class="buyer-card" data-buyer data-base-price="500">
-                <div class="buyer-head">
-                  <img src="./assets/buyer-olga.png" alt="">
-                  <div>
-                    <h3>Ольга</h3>
-                    <p>2 000 км. от вас</p>
-                  </div>
-                </div>
-                <div class="payment-card">
-                  <div>
-                    <p class="price-line" data-pay-price></p>
-                    <p class="caption">Заплатит покупатель</p>
-                  </div>
-                  <div>
-                    <p class="deduct" data-deduct-price></p>
-                    <p class="caption">Вычтем из денег за товар</p>
-                  </div>
-                </div>
-              </article>
+          <div class="carousel carousel-sales" aria-label="Свайп распродаж">
+            <div class="carousel-track">
+              <img class="sale-card" src="./assets/card-sale.png?v=figma-107-36052-20260701-2" alt="Распродажа летних товаров">
+              <img class="sale-card" src="./assets/card-sale.png?v=figma-107-36052-20260701-2" alt="Распродажа летних товаров">
+              <img class="sale-card" src="./assets/card-sale.png?v=figma-107-36052-20260701-2" alt="Распродажа летних товаров">
+              <img class="sale-all-card" src="./assets/card-sale-all.png?v=figma-107-36052-20260701-2" alt="Все доступные распродажи">
             </div>
-          </section>
+          </div>
         </div>
 
-        <footer class="actions">
-          <button class="primary-action" type="button" data-save-button>Сохранить скидку 200 ₽</button>
-          <button class="secondary-action" type="button">Не добавлять</button>
-        </footer>
+        <div class="fixed-crop sticky-discounts" data-sticky-header aria-hidden="true">
+          <img src="./assets/proto-sticky-header-clean.png?v=figma-107-36052-20260701-2" alt="">
+        </div>
+        <button class="sticky-back-hit" type="button" data-action="list" aria-label="Назад"></button>
+        <div class="fixed-crop discounts-home-indicator" aria-hidden="true">
+          <img src="./assets/proto-discounts.png?v=figma-107-36052-20260701-2" alt="">
+        </div>
       </section>
+
+      <div class="sheet-backdrop" data-sheet-backdrop aria-hidden="true">
+        <section class="level-sheet" aria-label="Уверенный уровень">
+          <div class="sheet-scroll" data-sheet-scroll>
+            <img class="sheet-image" data-src="./assets/proto-level-sheet.png?v=figma-107-36052-20260701-2" alt="">
+          </div>
+          <div class="sheet-close-visual" aria-hidden="true">
+            <img src="./assets/sheet-close.png?v=figma-107-36052-20260701-2" alt="">
+          </div>
+          <button class="sheet-close" type="button" data-action="close-sheet" aria-label="Закрыть уровень"></button>
+          <div class="sheet-home-indicator" aria-hidden="true">
+            <img src="./assets/proto-level-sheet.png?v=figma-107-36052-20260701-2" alt="">
+          </div>
+        </section>
+      </div>
     </main>
 
-    <script src="./site.js?v=figma-76-37893-20260701-9"></script>
+    <script src="./site.js?v=figma-107-36052-20260701-2"></script>
   </body>
 </html>
