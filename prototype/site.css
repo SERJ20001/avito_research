@@ -259,6 +259,58 @@ button {
   user-select: none;
 }
 
+.ai-title-shimmer {
+  position: absolute;
+  left: 0;
+  top: calc(32px * var(--screen-scale));
+  z-index: 1;
+  width: calc(310px * var(--screen-scale));
+  height: calc(26px * var(--screen-scale));
+  background:
+    linear-gradient(
+      105deg,
+      transparent 0%,
+      transparent 38%,
+      rgba(255, 255, 255, 0.1) 44%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(255, 255, 255, 0.1) 56%,
+      transparent 62%,
+      transparent 100%
+    );
+  background-size: 220% 100%;
+  mask-image: url("./assets/ai-title-shimmer-mask.png?v=figma-107-36052-20260701-4");
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  -webkit-mask-image: url("./assets/ai-title-shimmer-mask.png?v=figma-107-36052-20260701-4");
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  animation: ai-title-shimmer 4s ease-in-out infinite;
+}
+
+@keyframes ai-title-shimmer {
+  0% {
+    background-position: 180% 0;
+    opacity: 0;
+  }
+
+  4% {
+    opacity: 1;
+  }
+
+  22% {
+    background-position: -80% 0;
+    opacity: 1;
+  }
+
+  30%,
+  100% {
+    background-position: -80% 0;
+    opacity: 0;
+  }
+}
+
 .carousel-ai-new {
   top: calc(74px * var(--screen-scale));
 }
